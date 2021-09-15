@@ -19,7 +19,7 @@ am4core.useTheme(am4themes_animated);
 var chart = am4core.create("bardiv", am4charts.XYChart);
 chart.scrollbarX = new am4core.Scrollbar();
 let bartitle = chart.titles.create();
-bartitle.text = "Toss Wins";
+bartitle.text = "Man Of The Match Awards";
 bartitle.fontSize = 25;
 
 Pietitle.marginBottom = 30;
