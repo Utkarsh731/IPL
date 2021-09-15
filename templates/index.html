@@ -10,16 +10,50 @@
 
     <title>INDIAN PREMIERE LEAGUE 2021</title>
 <style>
-body { background-color: #30303d; color: #fff; }
+body { background-color: #30303d; color: #fff;  }
+#main{
+border: 2px solid white;
+height: 1000px;
+width: 100%;
+}
 #chartdiv {
   width: 100%;
   height: 500px;
 }
+#split {
+  height: 500px;
+  width: 100%;
+  top: 0;
+  padding-top: 20px;
+}
+#left {
+float:left;
+  height: 500px;
+  border: 2px solid white;
+  width: 50%;
+  left: 0;
+}
+#right {
+float:right;
+border: 2px solid white;
+height: 500px;
+width: 50%;
+  right: 0;
+}
+#piechartdiv {
+  width: 100%;
+  height: 400px;
+}
+#bardiv {
+  width: 100%;
+  height: 400px;
+}
+
+
 </style>
   </head>
   <body>
-  <div id="main">
-    <div id="navbar">
+  <div id="navbar">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">INDIAN PREMIERE LEAGUE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,6 +83,7 @@ body { background-color: #30303d; color: #fff; }
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </div>
+  <div id="main">
     <div id="chartdiv">
       <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
@@ -57,6 +92,29 @@ body { background-color: #30303d; color: #fff; }
    <script type="text/javascript">var data={{data|tojson}}</script>
   <script src="/static/js/barchart.js"></script>
     </div>
+    <div id="split">
+    <div id="left">
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+      <script src="https://cdn.amcharts.com/lib/4/themes/dark.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<div id="piechartdiv">
+  <script type="text/javascript">var data={{toss_wins|tojson}}</script>
+  <script src="/static/js/piechart.js"></script>
+  </div>
+</div>
+<div id="right">
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+      <script src="https://cdn.amcharts.com/lib/4/themes/dark.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<div id="bardiv">
+ <script type="text/javascript">var data={{pom|tojson}}</script>
+  <script src="/static/js/barchart_images.js"></script>
+</div>
+<!-- Chart design taken from Samsung health app -->
     </div>
+    </div>
+  </div>
   </body>
 </html>

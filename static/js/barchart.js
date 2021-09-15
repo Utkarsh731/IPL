@@ -17,12 +17,12 @@ am4core.useTheme(am4themes_animated);
 
 // Create chart instance
 var chart = am4core.create("chartdiv", am4charts.XYChart);
-
+let title = chart.titles.create();
+title.text = "Team Wins";
+title.fontSize = 25;
+title.marginBottom = 30;
 // Add data
 chart.data = data;
-console.log("data===")
-console.log(data)
-
 // Create axes
 
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
