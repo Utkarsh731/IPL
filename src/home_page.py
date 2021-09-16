@@ -1,5 +1,4 @@
 from flask import render_template
-import json
 
 def home_page_handler(collection):
     data=list(collection.aggregate([{"$group":{"_id":"$winner","wins":{"$sum":1}}},

@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import os, pymongo, urllib, csv
+import os, pymongo, urllib
 from src import *
 
 app = Flask(__name__)
@@ -10,6 +10,7 @@ try:
     uri = os.environ['mongo'].format(username, password)
     client = pymongo.MongoClient(uri)
     db = client[os.environ['database']]
+    print("connected to db")
 except Exception as e:
     print(e)
     print("no connection")
